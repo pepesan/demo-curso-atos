@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size
 import java.io.Serializable
 
 data class Dato(
-    var id: Long = 0,
+    var id: Long,
     @NotNull
     @NotBlank
     @Size(
@@ -14,5 +14,6 @@ data class Dato(
         max = 20,
         message = "Debe tener entre 1 y 20 chars"
     )
-    var cadena: String = "") : Serializable {
+    var cadena: String) : Serializable {
+        constructor() : this(0,"") {}
 }
